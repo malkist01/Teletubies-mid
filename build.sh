@@ -3,7 +3,7 @@
 # Dependencies
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
-
+cd MY_DIR="$PWD"
 rm -rf KernelSU
 
 # integrate kernelsu-SukiSu
