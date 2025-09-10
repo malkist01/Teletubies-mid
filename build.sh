@@ -13,9 +13,9 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo clang-15.tar.gz "https://gitlab.com/LeCmnGend/clang/-/archive/clang-15/clang-clang-15.tar.gz"
-      tar -zxf clang-15.tar.gz -C "clang" --strip-components=1
-        KBUILD_COMPILER_STRING="Aospclang"
+      curl -Lo greenforce-clang-22.0.0git-07092025.tar.gz "https://github.com/greenforce-project/greenforce_clang/releases/download/07092025/greenforce-clang-22.0.0git-07092025.tar.gz"
+      tar -zxf greenforce-clang-22.0.0git-07092025.tar.gz -C "clang" --strip-components=1
+        KBUILD_COMPILER_STRING="greenforce-clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
