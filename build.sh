@@ -10,11 +10,10 @@ rm -rf KernelSU
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
 
 clang() {
-    rm -rf clang
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
         git clone https://gitlab.com/itsshashanksp/android_prebuilts_clang_host_linux-x86_clang-r547379.git --depth=1 clang
-        KBUILD_COMPILER_STRING="ZyC clang"
+        KBUILD_COMPILER_STRING="Aospclang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
