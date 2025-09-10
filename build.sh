@@ -5,7 +5,6 @@ rm -rf kernel
 git clone $REPO -b $BRANCH kernel 
 cd kernel
 rm -rf KernelSU
-rm -rf KernelSU
 
 # integrate kernelsu-SukiSu
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
@@ -59,6 +58,8 @@ PROCS=$(nproc --all)
 export PROCS
 STATUS=STABLE
 export STATUS
+BOT_TOKEN="7596553794:AAGoeg4VypmUfBqfUML5VWt5mjivN5-3ah8"
+CHAT_ID="-1002287610863"
 source "${HOME}"/.bashrc && source "${HOME}"/.profile
 if [ $CACHE = 1 ]; then
     ccache -M 100G
@@ -68,13 +69,13 @@ LC_ALL=C
 export LC_ALL
 
 tg() {
-    curl -sX POST https://api.telegram.org/bot"${token}"/sendMessage -d chat_id="${chat_id}" -d parse_mode=Markdown -d disable_web_page_preview=true -d text="$1" &>/dev/null
+    curl -sX POST https://api.telegram.org/bot"${BOT_TOKEN}"/sendMessage -d chat_id="${CHAT_ID}" -d parse_mode=Markdown -d disable_web_page_preview=true -d text="$1" &>/dev/null
 }
 
 tgs() {
     MD5=$(md5sum "$1" | cut -d' ' -f1)
-    curl -fsSL -X POST -F document=@"$1" https://api.telegram.org/bot"${token}"/sendDocument \
-        -F "chat_id=${chat_id}" \
+    curl -fsSL -X POST -F document=@"$1" https://api.telegram.org/bot"${BOT_TOKEN}"/sendDocument \
+        -F "chat_id=${CHAT_ID}" \
         -F "parse_mode=Markdown" \
         -F "caption=$2 | *MD5*: \`$MD5\`"
 }
@@ -101,8 +102,8 @@ push() {
 
 # Catch Error
 finderr() {
-    curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
-        -d chat_id="$chat_id" \
+    curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
+        -d chat_id="$CHAT_ID" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=markdown" \
         -d sticker="CAADBQADZwADqZrmFoa87YicX2hwAg" \
