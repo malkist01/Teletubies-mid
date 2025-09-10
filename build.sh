@@ -13,7 +13,7 @@ clang() {
     rm -rf clang
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
-        git clone https://gitlab.com/clangsantoni/zyc_clang.git -b 21 --depth=1 clang
+        git clone https://gitlab.com/itsshashanksp/android_prebuilts_clang_host_linux-x86_clang-r547379.git --depth=1 clang
         KBUILD_COMPILER_STRING="ZyC clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
