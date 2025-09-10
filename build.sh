@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # Dependencies
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
-cd MY_DIR="$PWD"
+rm -rf kernel
+git clone $REPO -b $BRANCH kernel 
+cd kernel
+rm -rf KernelSU
 rm -rf KernelSU
 
 # integrate kernelsu-SukiSu
