@@ -12,7 +12,9 @@ curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kern
 clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
-        git clone https://gitlab.com/itsshashanksp/android_prebuilts_clang_host_linux-x86_clang-r547379.git --depth=1 clang
+      mkdir -p "clang"
+      curl -Lo clang-15.tar.gz "https://gitlab.com/LeCmnGend/clang/-/archive/clang-15/clang-clang-15.tar.gz"
+      tar -zxf clang-15.tar.gz -C "clang" --strip-components=1
         KBUILD_COMPILER_STRING="Aospclang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
