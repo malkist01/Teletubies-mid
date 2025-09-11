@@ -13,9 +13,9 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo greenforce-clang-22.0.0git-07092025.tar.gz "https://github.com/greenforce-project/greenforce_clang/releases/download/07092025/greenforce-clang-22.0.0git-07092025.tar.gz"
-      tar -zxf greenforce-clang-22.0.0git-07092025.tar.gz -C "clang" --strip-components=1
-        KBUILD_COMPILER_STRING="greenforce-clang"
+      curl -Lo linux-x86-aosp-new-main-kernel-2025.tar.gz "https://git.codelinaro.org/clo/la/platform/prebuilts/clang/host/linux-x86/-/archive/aosp-new/main-kernel-2025/linux-x86-aosp-new-main-kernel-2025.tar.gz"
+      tar -zxf linux-x86-aosp-new-main-kernel-2025.tar.gz -C "clang" --strip-components=1
+        KBUILD_COMPILER_STRING="linaro-clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
