@@ -13,9 +13,9 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo clang-r563880.tar.gz "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/0998f421320ae02fddabec8a78b91bf7620159f6/clang-r563880.tar.gz"
-      tar -zxf clang-r563880.tar.gz -C "clang" --strip-components=1
-        KBUILD_COMPILER_STRING="linaro-clang"
+      curl -Lo RvClang-20.1.0-bolt-pgo-full_lto.tar.gz "https://github.com/Rv-Project/RvClang/releases/download/20.1.0/RvClang-20.1.0-bolt-pgo-full_lto.tar.gz"
+      tar -zxf RvClang-20.1.0-bolt-pgo-full_lto.tar.gz -C "clang" --strip-components=1
+        KBUILD_COMPILER_STRING="RvClang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
