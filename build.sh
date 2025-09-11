@@ -13,8 +13,8 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo WeebX-Clang-19.1.5.tar.gz "https://github.com/XSans0/WeebX-Clang/releases/download/WeebX-Clang-19.1.5-release/WeebX-Clang-19.1.5.tar.gz"
-      tar -zxf WeebX-Clang-19.1.5.tar.gz -C "clang" --strip-components=1
+      curl -Lo WeebX-Clang-20.0.0git.tar.gz "https://github.com/XSans0/WeebX-Clang/releases/download/WeebX-Clang-20.0.0git-release/WeebX-Clang-20.0.0git.tar.gz"
+      tar -zxf WeebX-Clang-20.0.0git.tar.gz -C "clang" --strip-components=1
         KBUILD_COMPILER_STRING="WeebX-Clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
