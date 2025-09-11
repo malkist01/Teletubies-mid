@@ -13,8 +13,8 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo linux-x86-aosp-new-main-kernel-2025.tar.gz "https://git.codelinaro.org/clo/la/platform/prebuilts/clang/host/linux-x86/-/archive/aosp-new/main-kernel-2025/linux-x86-aosp-new-main-kernel-2025.tar.gz"
-      tar -zxf linux-x86-aosp-new-main-kernel-2025.tar.gz -C "clang" --strip-components=1
+      curl -Lo mirror-goog-llvm-r574158-release.tar.gz "https://android.googlesource.com/toolchain/common/+archive/refs/heads/mirror-goog-llvm-r574158-release.tar.gz"
+      tar -zxf mirror-goog-llvm-r574158-release.tar.gz -C "clang" --strip-components=1
         KBUILD_COMPILER_STRING="linaro-clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
