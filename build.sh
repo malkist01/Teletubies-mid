@@ -13,9 +13,9 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo RvClang-20.1.0-bolt-pgo-full_lto.tar.gz "https://github.com/Rv-Project/RvClang/releases/download/20.1.0/RvClang-20.1.0-bolt-pgo-full_lto.tar.gz"
-      tar -zxf RvClang-20.1.0-bolt-pgo-full_lto.tar.gz -C "clang" --strip-components=1
-        KBUILD_COMPILER_STRING="RvClang"
+      curl -Lo WeebX-Clang-19.1.5.tar.gz "https://github.com/XSans0/WeebX-Clang/releases/download/WeebX-Clang-19.1.5-release/WeebX-Clang-19.1.5.tar.gz"
+      tar -zxf WeebX-Clang-19.1.5.tar.gz -C "clang" --strip-components=1
+        KBUILD_COMPILER_STRING="WeebX-Clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
