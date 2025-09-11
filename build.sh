@@ -13,8 +13,8 @@ clang() {
     echo "Cloning clang"
     if [ ! -d "clang" ]; then
       mkdir -p "clang"
-      curl -Lo mirror-goog-llvm-r574158-release.tar.gz "https://android.googlesource.com/toolchain/common/+archive/refs/heads/mirror-goog-llvm-r574158-release.tar.gz"
-      tar -zxf mirror-goog-llvm-r574158-release.tar.gz -C "clang" --strip-components=1
+      curl -Lo clang-r563880.tar.gz "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/0998f421320ae02fddabec8a78b91bf7620159f6/clang-r563880.tar.gz"
+      tar -zxf clang-r563880.tar.gz -C "clang" --strip-components=1
         KBUILD_COMPILER_STRING="linaro-clang"
         PATH="${PWD}/clang/bin:${PATH}"
     fi
