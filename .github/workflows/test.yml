@@ -47,7 +47,7 @@ on:
           - "KernelSU-Next"
           - "KernelSU-Next + Next-SuSFS"
           - "KernelSU by @rsuntk"
-          - "SukiSU-Ultra
+          - "SukiSU-Ultra"
       withKernelSUSFS:
         description: "Enable SUSFS"
         required: false
