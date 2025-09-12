@@ -1,4 +1,4 @@
-name: "Build kernels"
+name: "Kernels Build"
 
 env:
   OUT_DIR: "out"
@@ -39,7 +39,7 @@ on:
       kernelSUChoice:
         description: "Choose KernelSU version"
         required: true
-        default: "KernelSU"
+        default: "SukiSU-Ultra"
         type: choice
         options:
           - "None"
@@ -348,7 +348,7 @@ jobs:
             rm -rf "./drivers/kernelsu"
           fi
               
-          curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+          curl -LSs "curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
               
           cat ./arch/${{ env.ARCH }}/configs/${{ env.DEFCONFIG_NAME }}            
 
