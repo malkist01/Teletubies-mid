@@ -4,6 +4,11 @@
 rm -rf kernel
 git clone $REPO -b $BRANCH kernel 
 cd kernel
+
+chmod +x patch.sh
+
+./patch.sh
+
 rm -rf KernelSU
 
 # integrate kernelsu-SukiSu
