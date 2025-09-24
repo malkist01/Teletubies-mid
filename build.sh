@@ -5,7 +5,7 @@ rm -rf kernel
 git clone $REPO -b $BRANCH kernel 
 cd kernel
 # Add KernelSU
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s next
 #add KSU Config
 echo "Adding CONFIG_KSU.."
 echo "CONFIG_KSU=y" >> ./arch/arm64/configs/mido_defconfig
